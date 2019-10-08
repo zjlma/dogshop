@@ -1,4 +1,4 @@
-package gmail.dogshop.dogshop.user;
+package gmail.dogshop.user;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
