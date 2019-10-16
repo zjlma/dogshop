@@ -14,4 +14,12 @@ import java.util.List;
 @Mapper
 public interface UmsMapper {
     List<Ums> getAllUser();
+
+    int delUser(int id);
+
+    Ums findUser(int id);
+
+    int insertUser(Ums ums);
+
+    int updateUser(Ums ums);
 }

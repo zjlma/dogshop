@@ -26,4 +26,24 @@ public class UmsServiceImpl implements UmsService {
     public List<Ums> getAllUser() {
         return umsMapper.getAllUser();
     }
+
+    @Override
+    public int delUser(int id) {
+        return umsMapper.delUser(id);
+    }
+
+    @Override
+    public Ums findUser(int id) {
+        return umsMapper.findUser(id);
+    }
+
+    @Override
+    public int insertUser(Ums ums) {
+        return umsMapper.insertUser(ums);
+    }
+
+    @Override
+    public int updateUser(Ums ums) {
+        return umsMapper.updateUser(ums);
+    }
 }

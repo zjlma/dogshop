@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="gmail.dogshop.user.mapper.AddressMapper">
+    <sql id="table_name" >ums_member_receive_address</sql>
+    <select id="getAllAddress">
+    select * from <include refid="table_name"/>
+    </select>
+
+    <select id="findAddress" parameterType="int" resultType="gmail.dogshop.user.bean.UmsReceiveAddress">
+    select * from <include refid="table_name"/>
+    where id=#{id}
+    </select>
+
+    <delete id="delAddress">
+    delete from <include refid="table_name"/>
+    </delete>
+
+    <update id="updateAddress">
+    update  <include refid="table_name"/>
+    set id=#{id} ,member_id=#{memberId} ,name=#{name} ,phone_number=#{phoneNumber} ,
+        default_status=#{defaultStatus} ,post_code=#{postCode} ,province=#{province} ,
+        city=#{city} ,region=#{region} ,detail_address=#{detailAddress}
+    where id=#{id}
+    </update>
+
+    <insert id="insertAddress">
+        insert into <include refid="table_name"/>
+        (id,member_id,name,phone_number,default_status,post_code,province,city
+        ,region,detail_address)
+        value (#{id} ,#{memberId} ,#{name} ,#{phoneNumber} ,#{defaultStatus} ,#{postCode}
+        ,#{province} ,#{city} )
+    </insert>
+
+
+</mapper>
